@@ -1,7 +1,9 @@
 from rsa import RSA_Encrypt
 
-# Get 1024 bit RSA encrytion
-rsa_encryption = RSA_Encrypt(1024)
+bit_enc = input("Enter the number of bits encryption to perform: ")
+
+# Get bit_enc bit RSA encrytion
+rsa_encryption = RSA_Encrypt(int(bit_enc))
 
 # Generate keys
 rsa_encryption.generate_encryption()
@@ -12,6 +14,8 @@ send = rsa_encryption.send_public_key()
 # Display public key and mod number
 print("\n")
 print("Public Key: \n" + str(send['public_key']))
+print("\n")
+print("Private Key: \n" + str(rsa_encryption._RSA_Encrypt__private_key))
 print("\n")
 print("Modulo N: \n" + str(send['mod']))
 print("\n")
